@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Hello, printf
  * Description: Using printf to print text
@@ -8,7 +7,6 @@
 
 int main(void)
 {
-	printf("with proper grammer, but the outcome is a piece of art,\n";
-	return (0);
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	return 0;
 }
-
