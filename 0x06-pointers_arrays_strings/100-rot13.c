@@ -10,18 +10,22 @@
 char *rot13(char *str)
 {
 	char *p = str;
-
-	while (*p != '\0')
+	int i;
+	
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((*p >= 'a' && *p <= 'm') || (*p >= 'A' && *p <= 'M'))
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			*p += 13;
+			p[i] = (((str[i] - 'a') + 13) % 26) + 'a';
 		}
-		else if ((*p >= 'n' && *p <= 'z') || (*p >= 'N' && *p <= 'Z'))
+		else if (str[i] >= 'A' && str[i] <= 'Z')
 		{
-			*p -= 13;
+			p[i] = (((str[i] - 'A') + 13) % 26) + 'A';
 		}
-		p++;
+		else
+		{
+			p[i] = str[i];
+		}
 	}
-	return (str);
+	return (p);
 }
